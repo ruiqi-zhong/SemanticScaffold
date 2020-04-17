@@ -12,6 +12,7 @@ NEXT_LINE = '!Next_LINE!'
 debug = False
 train_dir = '../spoc/onmt/'
 
+
 # mapping from a token to a token for onmt
 def plain2onmt_tok(val, kind):
     if '\n' in val:
@@ -27,7 +28,8 @@ def plain2onmt_tok(val, kind):
         return val
     return None
 
-# mapping from a piece of code to a piece of code
+
+# mapping from translation format to a piece of code
 def to_code(s):
     tokens = s.split(' ')
     saved_tks = []
@@ -47,10 +49,12 @@ def to_code(s):
     result = ''.join(saved_tks).strip()
     return result
 
+
 def to_onmt(s):
     values = [plain2onmt_tok(t.value, t.kind) for t in tokenize(s, new_line=False) if t.kind != 'whitespace']
     result = ' '.join([v for v in values if v is not None])
     return result
+
 
 def round_trip(c):
     s = to_onmt(c)

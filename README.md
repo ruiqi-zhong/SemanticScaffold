@@ -8,8 +8,8 @@ It will automatically download the data, setup the directories and write the fil
 we need for our implementation. Note that the result might be slightly different, as we used the initial dataset release of  Kulal et al., 2019 (rather than the updated version).
 We denote each program/problem as [subid]-[probid]-[workerid].
 
-## 2. Code pieces
-Since translating code pieces is not our focus, we precomputed all the translations and dumped it into spoc/pre_trans/ for ease of reproducibility.
+## 2. Code Pieces
+Since translating code pieces is not our focus, we precomputed all the translations and dumped it into ```spoc/pre_trans/``` for ease of reproducibility.
 To reproduce the training process, change directory to the  ```src``` folder and run 
 
 ```python3 onmt_dir/prepare_for_onmt.py comments```
@@ -42,10 +42,10 @@ python3 calculate_stats.py --result_dir=../spoc/search_results/semantics-hierarc
 ```
 
 Note that the evaluation can be extremely slow because running testcases takes a lot of time. 
-To alleviate this problem 
+To alleviate this problem,
 1. we memoize all the evaluation results in ```../spoc/eval_memo/```
-2. we  run several identical processes with different random seed to parallelize without conflicting each other. 
-The program will dump a lock in the target result directory whenever it starts to evaluate on a problem.
+2. we run several identical processes with different random seed to parallelize without conflicting each other.  
+Our script will dump a lock in the target result directory whenever it starts to evaluate on a problem.
 
 
 ## 4. Implementation
@@ -55,7 +55,7 @@ The program will dump a lock in the target result directory whenever it starts t
 ```parse/``` contains all the helper functionality to parse the C++ program. 
 We used a lot of heuristics to write our own C++ parser in python3 to extract the syntactic/semantics configuration for each line
 , since we failed to find any off-the-shelf tool to extract the features we want.
-The parser is tailored to this dataset specifically, so please do not use it for general C++ programs.
+The parser is tailored to this dataset specifically, so please do not use it to parse general C++ programs.
 Functions ```extract_semantics_config/extract_syntax_config``` in ```src/search_util/structured_search.py``` extracts the configuration for each code fragment.
 
 ```src/search_util/structured_search.py``` contains the main logic for hierarchical beam search. 
