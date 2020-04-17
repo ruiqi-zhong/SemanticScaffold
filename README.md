@@ -42,8 +42,23 @@ and we use the following command to print out results.
 python3 calculate_stats.py --result_dir=../spoc/search_results/semantics-hierarchical-use_indent-structure_beam_size50structure_topk20budget100/ --opt=problem
 ```
 
-
 Note that the evaluation can be extremely slow because running testcases takes a lot of time. 
 To alleviate this problem 
 1. we memoize all the evaluation results in ```../spoc/eval_memo```
 2. dump a lock to the result directory so that we can run several identical processes with different random seed to parallelize without conflicting each other.
+
+## 4. Implementation
+
+```evals/gold_judge.py``` evaluates whether a generated full program can pass all the testcases.
+
+```parse/``` contains all the helper functionality to parse the C++ program. 
+We used a lot of heuristics to write our own C++ parser in python3 to extract the syntactic/semantics configuration for each line
+, since we failed to find any off-the-shelf tool to extract the features we want.
+Functions ```extract_semantics_config/extract_syntax_config``` in ```src/search_util/structured_search.py``` extracts the configuration for each line.
+
+```src/search_util/structured_search.py``` contains the main logic for hierarchical beam search. 
+```StructureCandidate.step()``` implements the incremental check for beam search and ```src/search_util/tables.py``` check the SymTable constraint.
+
+## 5. Error Analysis in 7.3
+
+The error analysis sheet is hard_lines_category.csv .
