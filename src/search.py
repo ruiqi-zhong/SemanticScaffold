@@ -1,4 +1,3 @@
-import pickle as pkl
 from utils.multi_best_pq import Multipq
 from utils.spoc_utils import kf_range
 from evals.gold_judge import Judge
@@ -31,7 +30,6 @@ def search(translation_map: Callable[[str], Tuple[List[List[str]], List[List[flo
            program_dict: Dict[str, Any],  # a dictionary that contains information needed for a program, including pseudo code, indent, etc
            result_dir: str,  # the directory to dump the results
            budget: int,  # budget B
-           use_indent: bool,  # whether to use indentation information for the search
            search_opt: str,  # the constraint we use for searching,
            structure_beam_size: int = 50,  # beam width W for the search
            structure_topk: int = 20,  # the top K scaffolds we use for the search
@@ -40,10 +38,6 @@ def search(translation_map: Callable[[str], Tuple[List[List[str]], List[List[flo
     # load program information
     f_name, indent = program_dict['f_name'], program_dict['indent']
     program_length = len(indent)
-
-    # set indent to None if indent is not used
-    if not use_indent:
-        indent = None
 
     # evaluation requires running on a lot of testcases and is time consuming
     # we memoize all the evaluation results and save it on the disk
@@ -165,9 +159,6 @@ def get_args():
                              'base for no constraint, '
                              'syntax for Syntactic constraint, '
                              'semantics for SymTable constraint. ')
-    parser.add_argument('--use_indent', default=False, action='store_true',
-                        help='please set this flag on; '
-                             'we use indentation for all the experiments.')
     parser.add_argument('--structure_beam_size', type=int, default=50,
                         help='the beam size we use to search the scaffold. '
                              'denoted by W in the paper.')
@@ -180,13 +171,10 @@ def get_args():
     if args.result_dir is None:
         model_result_dir = '../spoc/search_results/' + args.search_opt + '-'
         model_result_dir += 'hierarchical' if not args.regular else 'regular'
-        if args.use_indent:
-            model_result_dir += '-use_indent-'
         if not args.regular:
             model_result_dir += 'structure_beam_size%d' % args.structure_beam_size
             model_result_dir += 'structure_topk%d' % args.structure_topk
         model_result_dir += 'budget%d' % args.budget
-
         model_result_dir += '/'
         if not os.path.exists(model_result_dir):
             os.mkdir(model_result_dir)
@@ -211,6 +199,6 @@ if __name__ == '__main__':
 
     for program_dict in pg:
         search(translation_map, program_dict, result_dir=args.result_dir, budget=args.budget,
-               use_indent=args.use_indent, search_opt=args.search_opt,
+               search_opt=args.search_opt,
                structure_beam_size=args.structure_beam_size,
                structure_topk=args.structure_topk, regular=args.regular)
