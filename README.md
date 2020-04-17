@@ -1,6 +1,7 @@
 # Semantic Scaffolds for Pseudocode-to-Code Generation
 
-This is the github repo that contains implementation that can reproduce the results in our paper.
+This github repo contains implementation that can reproduce the results in our paper.
+Please contact ruiqi-zhong@berkeley.edu if you have any questions.
 
 ## 1. Setup
 Change directory to ```src``` and run ```python3 setup_files.py```. 
@@ -9,7 +10,7 @@ we need for our implementation. Note that the result might be slightly different
 We denote each program/problem as [subid]-[probid]-[workerid].
 
 ## 2. Code Pieces
-Since translating code pieces is not our focus, we precomputed all the translations and dumped it into ```spoc/pre_trans/``` for ease of reproducibility.
+Since translating code pieces is not the focus of our research, we precomputed all the translated code pieces and dumped them into ```spoc/pre_trans/``` for ease of reproducibility.
 To reproduce the training process, change directory to the  ```src``` folder and run 
 
 ```python3 onmt_dir/prepare_for_onmt.py comments```
@@ -43,7 +44,7 @@ python3 calculate_stats.py --result_dir=../spoc/search_results/semantics-hierarc
 
 Note that the evaluation can be extremely slow because running testcases takes a lot of time. 
 To alleviate this problem,
-1. we memoize all the evaluation results in ```../spoc/eval_memo/```
+1. we memoize all the evaluation results in ```../spoc/eval_memo/``` .
 2. we run several identical processes with different random seed to parallelize without conflicting each other.  
 Our script will dump a lock in the target result directory whenever it starts to evaluate on a problem.
 
@@ -59,7 +60,7 @@ The parser is tailored to this dataset specifically, so please do not use it to 
 Functions ```extract_semantics_config/extract_syntax_config``` in ```src/search_util/structured_search.py``` extracts the configuration for each code fragment.
 
 ```src/search_util/structured_search.py``` contains the main logic for hierarchical beam search. 
-```StructureCandidate.step()``` implements the incremental check for beam search and ```src/search_util/tables.py``` check the SymTable constraint.
+```StructureCandidate.step()``` implements the incremental constraint check for beam search and ```src/search_util/tables.py``` check the SymTable constraint.
 
 ## 5. Error Analysis in Section 7.3
 
