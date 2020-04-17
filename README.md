@@ -1,12 +1,12 @@
-# Semantic Scaffolds for Pseudocode-to-Code Generation (ACL 2020)
+# Semantic Scaffolds for Pseudocode-to-Code Generation
 ## Ruiqi Zhong, Mitchell Stern, Dan Klein
 
 This is the github repo that contains implementation that can reproduce the results in our paper.
 
 ## 1. Setup
-run 
-```python3 setup_files.py``` and it will automatically download the data, setup the directories and write the files 
-we need for our implementation. Note that the result might be slightly different, as we used the initial dataset release of  Kulal et al., 2019.
+change directory to ```src``` and run ```python3 setup_files.py```. 
+It will automatically download the data, setup the directories and write the files 
+we need for our implementation. Note that the result might be slightly different, as we used the initial dataset release of  Kulal et al., 2019 (rather than the updated version while we submitted our paper).
 We define the id of each program/problem to be [subid]-[probid]-[workerid].
 
 ## 2. Code pieces
