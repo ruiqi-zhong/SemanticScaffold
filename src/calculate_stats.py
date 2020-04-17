@@ -1,7 +1,6 @@
 import pickle as pkl
 from argparse import ArgumentParser
 import os
-import numpy as np
 from collections import defaultdict
 from utils.spoc_utils import kf_range
 
@@ -83,9 +82,6 @@ def calculate_result(result_dir, opt):
     print('%d has no candidates.' % d['0 candidates'])
     print('%.3f not compilable.' % d['non_compile_r'])
     print([(key, num_rejs[key]) for key in sorted(num_rejs.keys())])
-
-    np.savetxt('../spoc/ranks/' + result_dir.split('/')[-2] + opt + '.txt',
-               np.array([r for r in rank if type(r) != str]))
 
 
 if __name__ == '__main__':
