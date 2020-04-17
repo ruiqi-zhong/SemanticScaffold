@@ -14,17 +14,17 @@ import pickle as pkl
 
 translate_dir = '../spoc/pre_trans/'
 search_options = {'base', 'syntax', 'semantics'}
+
+verbose = True
+
 # a map from the program id
 # to translations, scores,
 # where translation is a list (length = number of lines in a program) of list (length = number of candidates) of strings
 # (in other words, L x C in the notation of the paper)
 # and scores is of the same dimension and each float is the negative log of the probability of a translation
 # the translations are precomputed and we used OpenNMT to obtain the translations
-translation_dict = pkl.load(open('../spoc/pre_trans/translations.pkl', 'rb'))
-verbose = True
-
 def translation_map(f_name: str) -> Tuple[List[List[str]], List[List[float]]]:
-    return translation_dict[f_name]
+    return pkl.load(open('../spoc/pre_trans/' + f_name, 'rb'))
 
 
 def search(translation_map: Callable[[str], Tuple[List[List[str]], List[List[float]]]],  # see documentation above, generate code pieces and scores
