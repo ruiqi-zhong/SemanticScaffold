@@ -43,6 +43,10 @@ def write_all(csv_dir):
 
 if __name__ == '__main__':
     os.mkdir('../spoc/')
+    os.mkdir('../spoc/eval_memo/')
+    os.mkdir('../spoc/onmt/')
+    os.mkdir('../spoc/search_results/')
+    
     os.system('wget https://sumith1896.github.io/spoc/data/spoc.zip')
     os.system('mv spoc.zip ../spoc/')
     os.system('unzip ../spoc/spoc.zip -d ../spoc/')
