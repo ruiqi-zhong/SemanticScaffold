@@ -1,0 +1,201 @@
+comment,f_name,generated,gold,line_id,rank,Category
+if mat at j and i is E increment cnt,44529267-329A-53,if ( mat [ j ] == i ) cnt ++ ;,if (mat[j][i] == 'E') cnt++;,19,fail,Generation wrong
+s[occur[i][j] + k] = letter - a + A,12868321-95A-5,s [ occur [ i ] [ j ] + k ] = 'letter' - a + A ;,s[occur[i][j] + k] = letter - 'a' + 'A';,51,fail,"Reasonable,  but needs type disambiguation"
+"let value1, value2, val, a, b be integers with val = 0",36782767-57A-42,"int value1 , value2 , val , a , b = 0 ;","int value1, value2, val = 0, a, b;",21,fail,Generation wrong
+"if a[1] is equal to 4, then assign 4 to pic[2][2], pic[3][2], pic[5][2], and pic[4][2]",48677231-475A-42,"if ( a [ 1 ] == 4 ) pic [ 2 ] [ 2 ] = 4 , pic [ 3 ] [ 2 ] , pic [ 5 ] [ 2 ] , pic [ 4 ] [ 2 ] ;",if (a[1] == 4) { pic[2][2] = pic[3][2] = pic[5][2] = pic[4][2] = 4; },47,fail,Generation wrong
+else if p[3] and (s[1] || s[3] || l[3] || r[3] || r[2] || l[4]),44692317-812A-1,} else if ( p [ 3 ] && ( s [ 1 ] || s [ 3 ] || l [ 3 ] || l [ 3 ] || r [ 2 ] || l [ 4 ] ) ) {,else if (p[3] && (s[1] || s[3] || l[3] || r[3] || r[2] || l[4])),16,fail,Generation wrong
+"call dfs(x + 1, y) if x < m - 1 and v[y][x + 1] is true and u[y][x + 1] is false",19155767-193A-54,"if ( x < m - 1 && y ) dfs ( x + 1 , y ) , u [ y ] [ x + 1 ] == true ? u : u [ y + 1 ] ;","if (x < m - 1 && v[y][x + 1] && !u[y][x + 1]) dfs(x + 1, y);",8,fail,Generation wrong
+for i = 0 to the length of a,49111236-989A-13,for ( int i = 0 ; i < a . length ( ) ; i ++ ) {,for (int i = 0; i <= a.length() - 3; i++) {,8,fail,Annotation semantically wrong
+"else if a is ""saturday""",48455772-724A-10,"else if ( a == ""saturday"" )","    } else if (strcmp(a, ""saturday"") == 0) {",18,fail,Generation wrong
+"for a = i and k = 0 while k < p, dividing a by 7 and incrementing k, add 1 to used[a % 7]",42273455-685A-54,"for ( int a = i , k = 0 ; k < p ; a ++ , a ++ ) used [ a % 7 ] ++ ;","for (int a = i, k = 0; k < p; a /= 7, k++) used[a % 7] += 1;",22,fail,Generation wrong
+"read n new elements into a, b and c in a loop",48408114-498A-54,for ( i = 0 ; i < n ; i ++ ) cin >> a [ i ] >> b [ i ] ;,for (int i = 0; i < n; i++) { cin >> a[i] >> b[i] >> c[i]; },6,fail,Generation wrong
+increment suum by diff,48442944-1090A-43,suum += diff ;,sum += diff;,25,fail,"Reasonable, var name typo in annotation"
+create long long int v1 = (n + 1) / k,45570973-963A-13,long long int v1 = ( n + 1 ) / k ;,long long int vl = (n + 1) / k;,29,fail,"Reasonable, var name typo in annotation"
+"for b = first index of 0 in d to b is not end of d, incrementing b",37087299-558A-1,for ( b = d . begin ( ) ; b != d . end ( ) ; b ++ ) {,"for (map<int, int>::iterator b = d.find(0); b != d.end(); b++) {",26,fail,"Reasonable,  but needs type disambiguation"
+set value of l to min of l and x1,40992167-126A-54,"l = min ( l , x1 ) ;","l = min(l, (long long)x1);",26,fail,Annotation semantically wrong
+let res be integer with res = 0,45418559-713A-56,int res = 0 ;,int ret = 0;,1,fail,"Reasonable, var name typo in annotation"
+assign i to maxing,48670269-144A-26,maxing = i ;,maxind = i;,8,fail,"Reasonable, var name typo in annotation"
+"for it = character.begin() to it is not character.end(), print it->first,"" "",it->second",36578995-105A-5,"for ( ; it != . end ( ) ; it ++ ) { cout << it -> first << "" "" << it -> first << endl ; }","    for (it = character.begin(); it != character.end(); it++) { cout << it->first << "" "" << it->second << endl; }",21,fail,Generation wrong
+print amulets size,19879828-51A-25,cout << amulets << endl ;,cout << amulets.size() << endl;,21,fail,Generation wrong
+set m[monday] to 3,46007104-724A-9,m [ monday ] = 3 ;,"    m[""monday""] = 3;",6,fail,"Reasonable,  but needs type disambiguation"
+if col[i] is 1 set q[head] to i then set ans2 to 1 then increment head,33452056-164A-10,"if ( col [ i ] == 1 ) q [ head ++ ] = i , ans2 = 1 ;","if (col[i] == 1) q[head++] = i, ans2[i] = 1;",21,fail,Annotation semantically wrong
+"for i=0 to n exclusive print a[i] and new line if i+1 is equal to n else print a[i] and "" """,47327603-590A-12,for ( int i = 0 ; i < n ; i ++ ) cout << a [ i ] << ( i + 1 == n ? a [ i ] : n ) ;,"    for (int i = 0; i < n; i++) { cout << a[i] << (i + 1 == n ? ""\n"" : "" ""); }",23,fail,Generation wrong
+set d to d*dk,41774107-65A-43,d = d * dk ;,d = d * ck;,19,fail,"Reasonable, var name typo in annotation"
+for integer i = 0 to (ength of v exclusive,37443447-442A-54,for ( int i = 0 ; i < ength ( v ) ; i ++ ) {,for (int i = 0; i < (v.size()); i++) {,36,fail,"Reasonable, var name typo in annotation"
+if chair[i] = 1 and either chair[i - 1] = 1 or chair[i + 1] =1,47668793-982A-2,if ( chair [ i ] == 1 && chair [ i - 1 ] == 1 || chair [ i + 1 ] == 1 ) {,if (chair[i] == '1' && (chair[i - 1] == '1' || chair[i + 1] == '1')) {,18,fail,Generation wrong
+if j1[k] is greater than ans set ans = j1[k],41686350-733A-39,if ( j1 [ k ] > ans ) ans = j1 [ k ] ;,if (jl[k] > ans) ans = jl[k];,10,fail,"Reasonable, var name typo in annotation"
+"while a[i+1] is a[I] and i+1 ia less than n*n, increment i",41470630-582A-57,while ( a [ i + 1 ] == a [ I ] && i + 1 < n * n ) i ++ ;,while (a[i + 1] == a[i] && i + 1 < n * n) i++;,13,fail,Generation wrong
+while awalx different from x and awaly different from y,46222582-279A-26,while ( awalx != x && awaly != y ) {,while (awalx != x || awaly != y) {,5,fail,Annotation semantically wrong
+while value of s is not \0,45410011-20A-1,while ( s != 0 ) {,while (*s != '\0') {,8,fail,"Reasonable,  but needs type disambiguation"
+print int,48457506-66A-18,cout << int cout << endl ;,"        cout << ""int"" << endl;",8,fail,Generation wrong
+if binary_search of n - a[i] in a returned true,40991205-192A-54,if ( binary_search ( n - a [ i ] ) ) {,"if (binary_search(a.begin(), a.end(), (n - a[i]))) {",11,fail,"Reasonable,  but needs type disambiguation"
+"if xx <= da return {1m nextDiv of (L, a) + d}",39864144-883A-10,if ( xx <= da ) return { 1 << m } ;,"if (xx <= da) return {1, nextDiv(L, a) + d};",19,fail,Generation wrong
+"while index i + 1 of s = 'g' and index i + 2 = 'o', increment i + 2",38068583-729A-36,while ( s [ i + 1 ] == 'g' && index ) { i += 2 + 2 == 'o' ; },while (s[i + 1] == 'g' && s[i + 2] == 'o') { i += 2; },7,fail,Generation wrong
+set ans = 25*length of s,48419934-554A-12,int ans = 25 * s . length ( ) ;,ans += (25 * s.length());,4,fail,Annotation semantically wrong
+letnum = (v[l[k2]] - v[r[k1]]) / 2,47676186-699A-39,letnum = ( v [ l [ k2 ] ] - v [ r [ k1 ] ] ) / 2 ;,int num = (v[l[k2]] - v[r[k1]]) / 2;,17,fail,"Reasonable, var name typo in annotation"
+else if dB is less than dW,47969066-1075A-11,else if ( dB < dW ),} else if (dB < dW) {,16,fail,"Reasonable,  but needs syntax disambiguation"
+p[n] is a pait of long long integers,43645931-269A-2,long long p [ n ] = { 0 } ;,"pair<long long, long long> p[n];",13,fail,"Reasonable, var name typo in annotation"
+print max of a and sum / n rounded up,48947665-348A-54,"cout << max ( a , sum / n ) << endl ;","cout << max(a, (long long int)ceil((double)sum / (double)n)) << endl;",10,fail,Generation wrong
+if lfg = 1,42006421-711A-45,if ( lfg == 1 ),if (flg == 1) {,22,fail,"Reasonable, var name typo in annotation"
+"r0, r1 = strings, r0 set to ""O-"" and r1 set to ""-O""",47664530-363A-36,"string r0 , r1 = ""O-"" , r1 = ""-O"" ;","    string r0 = ""O-"", r1 = ""-O"";",3,fail,Generation wrong
+if v is 2,48771640-82A-12,if ( v == 2 ) {,} else if (v == 2) {,25,fail,Annotation semantically wrong
+if chair[i - 1] is equal to 0 and chair[i + 1] is equal to 0,47668729-982A-2,if ( chair [ i - 1 ] == 0 && chair [ i + 1 ] == 0 ) {,if (chair[i - 1] == '0' && chair[i + 1] == '0') {,22,fail,"Reasonable,  but needs type disambiguation"
+create stack of integers st,29038636-802A-54,stack < int > st ;,set<int> st;,1,fail,Annotation semantically wrong
+append ss onto sss,42462580-1029A-19,sss . push_back ( ss ) ;,sss += ss;,26,fail,"Reasonable,  but needs type disambiguation"
+"call dfs function with arguments len + 1, r[X] and root",47362358-741A-0,"dfs ( len + 1 , r [ X ] , root ) ;","dfs(len + 1, r[x], root);",10,fail,"Reasonable, var name typo in annotation"
+"print ""2 - 1 = 1\n1 + 3 = 4\n4 * 5 = 20\n20 + 4 = 24\n""",49109394-468A-54,"cout << ""2 -1 1 1\n1 ++5 = 4\n4 4\n4 ***5 = 20\n20 24 +4 4;","            cout << ""2 - 1 = 1\n1 + 3 = 4\n4 * 5 = 20\n20 + 4 = 24\n"";",11,fail,Generation wrong
+set m[A] to 9,38449910-88A-9,m [ A ] = 9 ;,"    m[""A""] = 9;",11,fail,"Reasonable,  but needs type disambiguation"
+add second item of pa to m,42364449-230A-31,m += pa . second ;,m += pa[0].second;,11,fail,Annotation semantically wrong
+declare swap taking in floats &a and &b,41561455-993A-13,"swap ( in , a , & b ) ;","void swap(float &a, float &b) {",1,fail,Generation wrong
+while N > 0 is true do the following,41882845-630A-39,while ( N -- ) {,while (n > 0) {,3,fail,"Reasonable, var name typo in annotation"
+"for ii = 0 to j, set ans[ii][count] and ans[count][ii] to i",6514648-232A-13,for ( int ii = 0 ; ii < j ; ii ++ ) ans [ ii ] [ count ] = ans [ count ] [ ii ] = i ;,for (ii = 0; ii <= j; ii++) ans[ii][count] = ans[count][ii] = 1;,15,fail,Annotation semantically wrong
+"for k = i to i + 1 exclusive, set c[k - i] to b[k]",41410402-156A-13,for ( int k = i ; k < i + 1 ; k ++ ) c [ k - i ] = b [ k ] ;,for (k = i; k < i + l; ++k) c[k - i] = b[k];,13,fail,Annotation semantically wrong
+if m is less than t,47480104-348A-54,if ( m < t ) {,if (m < t) m = t;,13,fail,Annotation semantically wrong
+let i = long long with value o left shift by i bits,48450829-732A-39,long long i = o / i ;,long long r = o << i;,33,fail,Generation wrong
+idx = index of b in s starting from idx + length of a,40772086-8A-54,string idx = s . find ( b + a . size ( ) ) ;,"idx = s.find(b, idx + a.size());",7,fail,Generation wrong
+if k or p aren't 10000000000,48648338-1082A-42,"if ( strstr ( k , p ) || strstr ( t , p ) )",if (k != 10000000000 || p != 10000000000) {,17,fail,Generation wrong
+"boolean function eq with long arguments double, x, double and y",42914636-40A-54,"bool eq ( long double , double double x , long double y , long double y ) {","bool eq(long double x, long double y) {",4,fail,Generation wrong
+if adj[i][j] and adj[j][k] and adjj[k][i] are all true,42539501-102A-12,if ( adj [ i ] [ j ] && adj [ j ] [ k ] && adjj [ k ] [ i ] ) {,if (adj[i][j] && adj[j][k] && adj[k][i]),16,fail,"Reasonable, var name typo in annotation"
+"in int function cmp taking a = int priority queue, b = int priority queue",48442944-1090A-43,"priority_queue < int > cmp ( int a , int b ) {","int cmp(priority_queue<int> a, priority_queue<int> b) {",3,fail,Generation wrong
+"for i from 0 to maxx inclusive, increase ret by work(pos - 1, i, head ? head : i, flag && (i = d[pos]))",49093688-204A-54,"for ( int i = 0 ; i <= maxx ; i ++ ) ret += work ( pos - 1 , i , head ? head : d [ pos ] ) , flag = d [ pos ] ;","for (int i = 0; i <= maxx; i++) { ret += work(pos - 1, i, head ? head : i, flag && (i == d[pos])); }",8,fail,Generation wrong
+c length 3 = vector of integers,48870929-52A-36,vector < int > c [ 3 ] ;,vector<int> cnt(3);,5,fail,"Reasonable, var name typo in annotation"
+push_back part of p = b+1,37309106-250A-9,p . push ( b ) ;,p.push_back(b + 1);,20,fail,Generation wrong
+"in function load which takes constant string reference t and pointers to ints a, b, and c",47843353-394A-57,"void load ( const string & t , const string & b , const string & c ) {","void load(const string &t, int *a, int *b, int *c) {",19,fail,Generation wrong
+return a string with I as first a items followed by + followed by b Is followed by = followed by c Is,47843353-394A-57,return a ;,"    return string(a, '|') + ""+"" + string(b, '|') + ""="" + string(c, '|');",25,fail,Generation wrong
+set lmit to i,43241011-14A-12,lmit = i ;,lmin = i;,10,fail,"Reasonable, var name typo in annotation"
+if (c * n) modulo 10 EQUALS a OR (c * n) modulo 10 EQUALS 0,48454799-732A-25,if ( ( c * n ) % 10 == ( c * n ) % 10 ) {,if ((c * n) % 10 == a || (c * n) % 10 == 0) {,4,fail,Generation wrong
+print 1\n0\n,48539662-150A-26,cout << 1 << endl ;,"        cout << ""1\n0\n"";",15,fail,Generation wrong
+set value of p to -1,42229519-279A-1,p = - 1 ;,p *= -1;,15,fail,Annotation semantically wrong
+if mo is a multiple of ans[0][1],48774754-547A-10,if ( mo % ans [ 0 ] == 0 ) {,if (mo % ans[0][1] == 0),49,fail,Generation wrong
+set result to max of result and -(dp[i] - last element of x),43432310-788A-25,"result = max ( result , - ( dp [ i ] - x ) ) ;","result = max(result, -(dp[i] - *--x.end()));",25,fail,Generation wrong
+"req=max(v*p+1-hy, 0)",47819473-487A-31,"req = max ( v * p + 1 - hy , 0 ) ;","long long int req = max(v * p + 1 - hy, (long long int)0);",9,fail,"Reasonable, annotation ambiguous"
+"declare long long n, u, v, weight, begin, current, previous and define long long sum1 = 0, sum2 = 0",41547525-24A-25,"long long n , u , v , weight , begin = 0 , current = 0 , previous = 0 ;","long long n, u, v, weight, sum1 = 0, sum2 = 0, begin, current, previous;",7,fail,Generation wrong
+set m[F] to 5,38449910-88A-9,m [ F ] = 5 ;,"    m[""F""] = 5;",7,fail,"Reasonable,  but needs type disambiguation"
+"while result of run next_permutation with beginning of p, end of p as arguments is true",43484926-685A-1,while ( ( p -> beginning ( ) ) ) -> end ( ) ;,"} while (next_permutation(p.begin(), p.end()));",41,fail,Generation wrong
+if x<y then set x=z,49029021-116A-12,if ( x < y ) x = z ;,if (x < z) { x = z; },15,fail,Annotation semantically wrong
+"for j = i to n inclusive, set maxx to the max of maxx and (v[i] + v[j]) / e[i][j])",49050234-444A-54,"for ( int j = i ; j <= n ; j ++ ) { maxx = max ( maxx , ( v [ i ] + v [ j ] ) / e [ i ] [ j ] ) ; }","for (int j = i; j <= n; j++) { maxx = max(maxx, (double)(v[i] + v[j]) / e[i][j]); }",12,fail,Generation wrong
+while (K is greater than 0) is true do the following,46182391-568A-39,while ( K > 0 ) {,while (k > 0) {,3,fail,"Reasonable, var name typo in annotation"
+for pointer p2 = p1 + 1 to p2[1],40292787-175A-5,for ( * p2 = p1 + 1 ; p2 <= p2 [ 1 ] ; ++ p2 ) {,for (char *p2 = p1 + 1; p2[1]; p2++) {,16,fail,Generation wrong
+print d and a space and c and a space and rem,45891437-818A-39,"cout << d << "" "" << c << "" "" << c << "" "" << rem << endl ;","    cout << d << "" "" << c << "" "" << rem << endl;",4,fail,Generation wrong
+if s[i] is g - a + A,4932469-95A-5,if ( s [ i ] == 'g' - a + A ) {,if (s[i] == g - 'a' + 'A') {,33,fail,"Reasonable,  but needs type disambiguation"
+read s,48988686-766A-37,cin >> s ;,"getline(cin, s);",2,fail,"Reasonable,  but needs type disambiguation"
+"if ((i cast to double) - 2) * 180) / (i cast to double) equals a[f], set y to true",49051517-270A-25,if ( ( ( double ) ( i ) - 2 ) / 180 ) ( double ) ( i == a [ f ] ) ;,if (((double(i) - 2) * 180) / (double(i)) == a[f]) y = true;,8,fail,Generation wrong
+"let n, ans, temp, lans, ltemp be int with ans = temp = lans = ltemp = INT_MAX",42695652-77A-43,"int n , ans = lans , temp = INT_MAX , lans = INT_MAX , ltemp ;","int n, ans = INT_MAX, temp = INT_MAX, lans = 0, ltemp = 0;",11,fail,Generation wrong
+ifnum is v[sz] return ( print 1 \n 0),47503314-574A-39,"return ( puts ( v [ sz ] , 0 ) ) ;","    if (num == v[sz]) return (cout << 1 << ""\n"", 0);",12,fail,"Reasonable, var name typo in annotation"
+Read 4 values into array x,48773039-812A-4,for ( int i = 0 ; i < 4 ; i ++ ) { cin >> x [ i ] ; },for (int j = 1; j <= 4; j++) { cin >> x[i][j]; },4,fail,Annotation semantically wrong
+"if arr[1][j], arr[i][1], arr[n][j], or arr[i][m] are 1, set count to 2",22341850-359A-42,if ( arr [ 1 ] [ j ] && arr [ i ] [ 1 ] && arr [ n ] [ j ] || arr [ i ] [ m ] ) count = 2 ;,if (arr[1][j] == 1 || arr[i][1] == 1 || arr[n][j] == 1 || arr[i][m] == 1) count = 2;,9,fail,Generation wrong
+if index i of s = 'o' and index i + 1 of s = 'g' and index i + 2 of s = 'o',38068583-729A-36,if ( s [ i ] == 'o' && index [ i + 1 ] == 'g' && index . at ( i + 2 ) == 'o' ) {,if (s[i] == 'o' && s[i + 1] == 'g' && s[i + 2] == 'o') {,5,fail,Generation wrong
+if s is greater than or equal to absolute value of a + absolute value of b and ( s - ( absolute value of a + absolute value of b ) % 2 is 0 ),47863365-515A-1,if ( s >= abs ( a ) + abs ( b ) && ( s == abs ( a + ( a ) % 2 ) ) ),if (s >= abs(a) + abs(b) and (s - (abs(a) + abs(b))) % 2 == 0) {,5,fail,Generation wrong
+set it equal to an iterator,48279168-22A-40,it = atoi ( an ) ;,it = st.begin();,14,fail,"Reasonable, annotation ambiguous"
+if n-1+1-1 < k,46901999-449A-31,if ( n - 1 + 1 - 1 < k ) {,if (n - 1 + m - 1 < k) {,3,fail,Annotation semantically wrong
+"void function calc with int arguments ind, pw and ty, long long argument last and num and string argument s",45760419-685A-54,"void calc ( int ind , int pw , int ty , int ty , string s ) {","void calc(int ind, long long last, long long num, int pw, int ty, string s) {",15,fail,Generation wrong
+if raw is a whole number,40758078-40A-54,if ( raw == a ) {,if (raw - (int)raw == 0),7,fail,Generation wrong
+while z is z less than 1,43374938-685A-53,while ( z < 1 ) {,while (z--) {,24,fail,Annotation semantically wrong
+"arr[2] = -2147483648, 2147483647",48665249-66A-18,"arr [ 2 ] = - 2147483648 , 2147483647 ;","    arr[2] = {""-2147483648"", ""2147483647""};",11,fail,Generation wrong
+"display ans, "" "", ans2, "" R""",46911710-748A-42,"cout << ans << "" "" << ans2 << "" R"" << endl ;","        cout << ans << "" "" << ans1 << "" R"" << endl;",9,fail,"Reasonable, var name typo in annotation"
+if str[i] equals ',47377456-264A-25,if ( str [ i ] == 'equals' ),if (str[i] == 'l') cout << i + 1 << '\n';,7,fail,Annotation semantically wrong
+print =,48921288-663A-5,"cout << ""="" << endl ;","        cout << "" = "";",54,fail,"Reasonable, annotation ambiguous"
+"for integer right is equal to 0, left is equal to 0, right is less than n, increment right by 1",47420896-251A-2,for ( int right = 0 ; left < n ; right ++ ) {,"for (int right = 0, left = 0; right < n; right++) {",10,fail,Generation wrong
+print c * a + r,47830733-950A-36,cout << c * a + r << endl ;,cout << 2 * (a + r) << endl;,17,fail,Annotation semantically wrong
+"if s + ip + len - 3 matches ""etr"" return 10",48276006-113A-54,"if ( s + ip + len - 3 == ""etr"" ) return 10 ;","    if (strcmp(s + ip + len - 3, ""etr"") == 0) return 10;",18,fail,"Reasonable,  but needs type disambiguation"
+print long,47842782-66A-31,putchar ( '\n' ) ;,"        cout << ""long"" << endl;",10,fail,Generation wrong
+let keep be long long with keep = lft[i] + rgt[n-1],48190528-354A-39,long long keep = lft [ i ] + rgt [ n - 1 ] ;,long long keep = (lft[i] + rgt[n - i]);,24,fail,Annotation semantically wrong
+"if (val + 1ll * i * l2 is greater than or equal to 0 and not ((val + 1ll * i * l2) % l)) return print 1ll * i * l2 + t2 print '\n', 0 from function",47453583-547A-1,if ( ( val + 1ll * i * l2 >= 0 && ! ( ( val + 1ll * i * l2 ) % l ) ) ) return cout << 1ll * i * l2 * l2 ) << '\n' ;,"if (val + 1ll * i * l2 >= 0 && !((val + 1ll * i * l2) % l)) return cout << 1ll * i * l2 + t2 << '\n', 0;",26,fail,Generation wrong
+set col__x to true,44529267-329A-53,col__x = true ;,col_x = true;,21,fail,"Reasonable, var name typo in annotation"
+add element / to end of vv,48465690-20A-1,vv . push_back ( element ) ;,"        vv.push_back(""/"");",9,fail,Generation wrong
+"if a bitwise and (1 shifted left by pom bytes) equals 0, add 1 shifted left by pom bytes to a",42006590-975A-42,if ( a & ( 1 << pom ) ) { cnt = cnt + pom ; },if ((a & (1 << pom)) == 0) a += (1 << pom);,11,fail,Generation wrong
+print every element of rat,26187468-63A-25,"cout << ""#Color"" << endl ;",for (int i = 0; i < rat.size(); i++) cout << rat[i] << endl;,16,fail,Generation wrong
+n equals n - (i >> 1) shifted bitwise by 1 to right,19001263-690A2-2,n = n - ( i >> 1 ) ;,n = (n - (i >> 1)) >> 1;,8,fail,Generation wrong
+in fun,40832397-204A-10,fun ( fun ( s ) ) ;,void get_g() {,5,fail,Annotation semantically wrong
+"values = integer array set to -1, 1",42291588-1027A-42,"int set = - 1 , 1 ;","int values[] = {-1, 1};",3,fail,Generation wrong
+else if string compare of s2 and saturday equals 0,48452871-724A-2,"else if ( strcmp ( s2 , saturday ) == 0 )","    else if (strcmp(s2, ""saturday"") == 0)",29,fail,"Reasonable,  but needs type disambiguation"
+if t equals b,27993199-394A-46,if ( t == b ) {,t = b;,5,fail,Annotation semantically wrong
+read s read a read b,35267416-8A-1,cin >> s >> a >> b ;,while (cin >> s >> a >> b) {,2,fail,Annotation semantically wrong
+set b[i] = b[i-1]/2,45279096-587A-39,b [ i ] = b [ i - 1 ] / 2 ;,b[i] += (b[i - 1] / 2);,19,fail,Annotation semantically wrong
+"let yy = array of characters with values A, E, O, U, I, Y",41686350-733A-39,"char yy [ ] = { A , E , O , U , I , Y } ;","char yy[] = {'A', 'E', 'O', 'U', 'I', 'Y'};",3,fail,"Reasonable,  but needs type disambiguation"
+s1 and s2 = array of size char,3936056-163A-31,"char s1 [ char ] , s2 [ char ] ;","char s1[size], s2[size];",2,fail,Annotation semantically wrong
+sort a,48529981-875A-12,"sort ( a , a + n ) ;","sort(a.begin(), a.end());",27,fail,Generation wrong
+"print the min between n/m + 1 * m -n * a, and n modulo m * b",41557730-990A-36,"cout << min ( n / m + 1 * m - n * a , n % m * b ) << endl ;","cout << min(((n / m + 1) * m - n) * a, (n % m) * b) << endl;",7,fail,Generation wrong
+"if and is empty and lol is true append character ""/"" to ans",47795453-20A-54,"if ( empty && lol ) ans += ""/"" ;","    if (ans.size() == 0 && lol == true) ans += ""/"";",20,fail,"Reasonable, var name typo in annotation"
+"print st[0] - 48 + 1,0:0,st[0] - 48 + 1",44681566-108A-5,"cout << st [ 0 ] - 48 + 1 << "" "" << st : 0 , st [ 0 ] - 48 + 1 << endl ;","                cout << st[0] - 48 + 1 << ""0:0"" << st[0] - 48 + 1 << endl;",19,fail,Generation wrong
+set value of y to -1,46878270-279A-1,y = - 1 ;,y *= -1;,28,fail,Annotation semantically wrong
+round = sum / (num - 1.0) rounded up,40734073-348A-54,long long int round = ceil ( ( double ) ( num / ( num - 1.0 ) ) ) ;,round = ceil(sum / (num - 1.0));,8,fail,Generation wrong
+read n values into array arrays,48918913-401A-42,for ( int i = 0 ; i < n ; i ++ ) { cin >> arr [ i ] ; },for (int i = 0; i < n; i++) { cin >> arrays[i]; },4,fail,"Reasonable, var name typo in annotation"
+if sum is less than n return size -1,45070720-149A-39,if ( sum < n ) return size - 1 ;,if (sum >= n) return (size - i);,5,fail,Annotation semantically wrong
+"A and B = array of 10000 long, n,i,a,s,j,k,tam,dem=long",40695227-691A-31,"long A [ 10000 ] , n , i , i , s , j , k , tam , dem , dem ;","long A[10000], B[10000], n, i, a, s, j, k, tam, dem;",1,fail,Generation wrong
+is sum is less than or equal to ceil of c/b,48464789-450A-56,if ( sum <= ceil ( c / b ) ),if (sum <= ceil((double)c / b)) {,6,fail,Annotation semantically wrong
+create string colors_rev initialized with arguments reverse beginning to reverse end,47319655-8A-1,"string colors_rev ( reverse ( end . begin ( ) , end . end ( ) ) ) ;","string colors_rev(colors.rbegin(), colors.rend());",3,fail,Generation wrong
+if names[i] is unique_names[k],42264131-2A-1,if ( names [ i ] == unique_names [ k ] ) {,if (names[l] == unique_names[k]) {,38,fail,Annotation semantically wrong
+"if p is first occurrence of ""AB"" in s and first occurrence of ""BA"" in p + 2",48582190-550A-1,"if ( p == s . find ( ""AB"" ) && p . find ( ""BA"" ) + 2 ) {","    if ((p = strstr(s, ""AB"")) && (strstr(p + 2, ""BA""))) {",4,fail,Generation wrong
+"create integer array x with x = { a / size of vec[0], b / size of vec[1], c / size of vec[2] }",2108930-77A-1,"int x [ ] = { a / vec . size ( ) , b [ vec . size ( ) ] , c [ vec . size ( ) ] , c / vec [ 2 ] . size ( ) ) ;","int x[] = {a / vec[0].size(), b / vec[1].size(), c / vec[2].size()};",14,fail,Generation wrong
+"for i = 0 to 5 exclusive, add (bc shifted right i bitwise and 1 bits) + (bv shifted right i bitwise and 1 bits) to a",31736397-442A-42,for ( int i = 0 ; i < 5 ; i ++ ) { a += ( bc << i & 1 ) + ( bv << i & 1 ) ; },for (int i = 0; i < 5; i++) a += (bc >> i & 1) + (bv >> i & 1);,38,fail,Generation wrong
+"for it = beginning of mp to it is not end of mp, incrementing it",48532332-2A-1,for ( it = mp . begin ( ) ; it != mp . end ( ) ; it ++ ) {,"for (map<string, int>::iterator it = mp.begin(); it != mp.end(); it++) {",10,fail,"Reasonable,  but needs type disambiguation"
+if mm[a[i]] is greater than or equal to maxn and mp[a[i]] is max,48532332-2A-1,if ( mm [ a [ i ] ] >= maxn && mp [ a [ i ] ] == max ) {,if (mm[a[i]] >= max && mp[a[i]] == max) {,19,fail,"Reasonable, var name typo in annotation"
+"ans[i] = pre - (call poww_mod with arguments of a, n - i) * (call poww_mod with arguments of b, i) modulo MOD",48106592-963A-18,"ans [ i ] = pre - ( poww_mod ( a , n - i ) * ( poww_mod ) ) % MOD ;","ans[i] = (pre - poww_mod(a, n - i) * poww_mod(b, i)) % MOD;",31,fail,Generation wrong
+if s[j] isn't s[j - 1],49109706-1029A-29,if ( s [ j ] != s [ j - 1 ] ) {,if (s[j] != s[j - i]) {,9,fail,Annotation semantically wrong
+"start for loop from i = 5 to n inclusive adding 2 to i; print i + 1, "" - "", i and "" = 1\n1 * 24 = 24\n"" on every loop",49109394-468A-54,"for ( i = 5 ; i <= n ; i += 2 ) { cout << i + 1 << "" -"" << i \n "" ; }","            for (i = 5; i <= n; i += 2) cout << i + 1 << "" - "" << i << "" = 1\n1 * 24 = 24\n"";",9,fail,Generation wrong
+"let long long integer on = pow(-1, i)",48582952-788A-39,"long long int on = pow ( - 1 , i ) ;","long long int on = pow(-1, (i + 1));",23,fail,Annotation semantically wrong
+if ( q2 is 0 and p2 - p1 is less than 0 ) or ( q2 is 0 and p1 - p2 is less than 0 ),28794498-547A-1,if ( ( q2 == 0 && p2 - p1 < 0 ) || ( q2 == 0 && p1 - p2 < 0 ) ) {,if ((q2 == 0 && p2 - p1 < 0) || (q1 == 0 && p1 - p2 < 0)) {,58,fail,"Reasonable, var name typo in annotation"
+"while there is input, set it to n and print out a[n/10] * a[n%10]",39022368-495A-56,while ( cin >> a ) { cout << out [ n / 10 ] * a [ n % 10 ] << endl ; },while (cin >> n) { cout << a[n / 10] * a[n % 10] << endl; },2,fail,Generation wrong
+"for i = 0 to m exclusive, assign the character . + s + the character . to s",45105814-156A-42,for ( int i = 0 ; i < m ; i ++ ) { char ( s + 's' + the ) ; },for (int i = 0; i < m; ++i) { s = '.' + s + '.'; },4,fail,Generation wrong
+"d = integer array of size 100001, width of 2, and depth of 2",48696017-550A-18,"int d [ 100001 ] [ 2 ] , depth ( 2 ) ;",int d[100001][2][2];,2,fail,Generation wrong
+"create int a[n], maxind, minind, max, min, set max to 0 and min to 10000",48670269-144A-26,"int a [ n ] , maxind = 0 , minind = 10000 , max , min ;","int a[n], maxind, minind, max = 0, min = 10000;",3,fail,Generation wrong
+if p[0] is greater than or equal to 1 and p[0] is less than or equal to u,41561455-993A-13,if ( p [ 0 ] >= 1 && p [ 0 ] <= u ) {,if (p[0] >= l && p[0] <= u) {,31,fail,Annotation semantically wrong
+"print h, h, "":"", m, m, newline",36088313-108A-1,"cout << h << "":"" << m << "":"" << endl ;","                    cout << h << h << "":"" << m << m << endl;",18,fail,Generation wrong
+print PRINT,9960183-412A-39,"cout << ""PRINT"" << endl ;","        cout << ""PRINT "" << s[0] << endl;",11,fail,Annotation semantically wrong
+"if a[x+1] is s[1], increment x",48559150-8A-1,if ( a [ x + 1 ] == s [ 1 ] ) x ++ ;,if (a[x + 1] == s[i]) ++x;,23,fail,Annotation semantically wrong
+"if s + ip + len - 4 matches ""lios"", return 0",48276006-113A-54,"if ( s + ip + len - 4 == ""lios"" ) return 0 ;","    if (strcmp(s + ip + len - 4, ""lios"") == 0) return 0;",16,fail,"Reasonable,  but needs type disambiguation"
+set b[pr] = a[pr],47662670-220A-36,b [ pr ] = a [ pr ] ;,b[pr] = a[dr];,37,fail,"Reasonable, var name typo in annotation"
+"moving it through character, print it->first, "" "" and it->second",36578939-105A-54,"cout << it -> first << "" "" << it -> second << "" "" ;","    for (it = character.begin(); it != character.end(); it++) { cout << it->first << "" "" << it->second << endl; }",21,fail,Generation wrong
+"read a, b, c, d and k , a = maximum of a and c , b = minimum of b and d",41656650-714A-2,cin >> a >> b >> c >> d >> k >> a >> b >> b >> k ;,"cin >> a >> b >> c >> d >> k, a = max(a, c), b = min(b, d);",2,fail,Generation wrong
+"if (dp[j][s1] > 0 and dp[j][s1] + tlen > dp[j][e1]), dp[j][e1] = dp[j][s1] + tlen",35681656-191A-5,if ( dp [ j ] [ s1 ] > 0 && dp [ j ] [ s1 ] + tlen > dp [ j ] [ e1 ] ) dp [ j ] [ e1 ] += tlen ;,if (dp[j][s1] > 0 && dp[j][s1] + tlen > dp[j][e1]) { dp[j][e1] = dp[j][s1] + tlen; },13,fail,Annotation semantically wrong
+sort a,49043458-337A-37,"sort ( a , a + n ) ;","sort(a.begin(), a.end());",8,fail,"Reasonable,  but needs type disambiguation"
+(ans = ans + dp[n][i][1]) = (ans = ans + dp[n][i][1]) modulo mod,48459521-1067A-5,ans += dp [ n ] [ i ] [ 1 ] == ( ans == ans + dp [ n ] [ i ] [ 1 ] ) % mod ;,for (int i = 1; i <= 200; ++i) (ans += dp[n][i][1]) %= mod;,41,fail,"Reasonable,  but needs type disambiguation"
+"if new_skill is not in the skills, insert new pair<string, int>(new_skill, 0) into skills",44495367-105A-54,"if ( new_skill . find ( new_skill ) != string :: npos ) skills . insert ( new string , int ) ;","if (skills.find(new_skill) == skills.end()) { skills.insert(pair<string, int>(new_skill, 0)); }",14,fail,Generation wrong
+if z is greater than s then do the following cout << No << endl,39817589-515A-9,"if ( z > s ) cout << ""No<<endl;","    if (z > s) cout << ""No"" << endl;",4,fail,Generation wrong
+"iss x, s2, y",33324535-108A-5,"int iss ( x , s2 , y ) ;",iss >> x >> s2 >> y;,6,fail,Generation wrong
+"st replace 1, d, and so of d",49043906-71A-36,"st . replace ( 1 , d , so ) ;","st.replace(1, d, so(d));",17,fail,Generation wrong
+let n be a long long and if n is less than or equal to d set n to d,47105090-787A-27,long long n = n <= d ;,long long n = b > d ? b : d;,14,fail,Generation wrong
+"create integers count, len1, len2, len, b1, b2 with count = 0, len1 = size of s1, len2 = size of s2",40991272-186A-1,"int count = 0 , len1 = s1 . size ( ) , len2 , len , b1 = s2 . size ( ) ;","int count = 0, len1 = s1.size(), len2 = s2.size(), len, b1, b2;",3,fail,Generation wrong
+for incremented i to n exclusive,45328035-8A-1,for ( ; i < n ; ++ i ) {,for (++i; i < n; ++i) {,26,fail,Annotation semantically wrong
+"minodd, blyat, ans and ods = long long integers with minodd set = 69696969696",49076103-621A-36,"long long int minodd = 69696969696 , blyat , ans , ods ;","long long minodd = 69696969696, blyat, ans, odds;",0,fail,"Reasonable, var name typo in annotation"
+if a[remainder of i +1 / 4][0] is 1 then do next commands,43413271-812A-9,if ( a [ remainder % 1 / 4 ] [ 0 ] == 1 ) {,if (a[(i + 1) % 4][0] == 1) {,15,fail,Generation wrong
+"mx, arr, arr2 = arrays of long long integers with mx has length of 1011, and arr and arr2 have length of 1001",35760697-631A-36,"long long mx , arr [ 1001 ] , arr [ 1001 ] , arr [ 1001 ] , arr2 [ 1001 ] ;","long long mx[1011], arr[1001], arr2[1001], n;",0,fail,Generation wrong
+set n to n mod po of d - 2,39269674-204A-10,n %= d . find ( d - 2 ) ;,n = n % po(d - 2);,8,fail,Generation wrong
+if i equals days[idx] and i is unequal to 0,38135287-54A-42,if ( i == days [ idx ] && i == unequal ) {,if (i == days[idx] && i != 0) {,6,fail,Generation wrong
+if s[i] equal to =,38626764-957A-26,if ( s [ i ] == '=' ) {,if (s[i] == '?') {,10,fail,Annotation semantically wrong
+"len, res, t, e = long long integers. a and s = arrays of long long integers, a with a length of 5 and s with a length of N",15740797-571A-36,"long long int a [ 5 ] , s [ 5 ] , len , s , t , e , e , e ;","long long a[5], len, s[N], res, t, e;",1,fail,Generation wrong
+"push a, b and c into temp",41389311-18A-54,"temp . push_back ( a , b ) ;","temp.push_back(a), temp.push_back(b), temp.push_back(c);",5,fail,Generation wrong
+"in a loop, multiply t by 2, starting from t = 1, while i + t <= n",1646098-178A2-54,for ( int i = 1 ; i + t <= n ; i = t + 2 ) {,for (t = 1; i + t <= n; t *= 2),8,fail,Generation wrong
+for cont = 0 to ne inclusive,47799126-558A-13,for ( int cont = 0 ; cont <= ne ; cont ++ ) {,for (int i = 0; cont < ne + 1; i++) {,36,fail,Annotation semantically wrong
+if aux + pos is (integer then do the following s.size(,42399241-1029A-9,if ( aux + pos == ( int ) ( ( aux ) . size ( ) ) ) { s . size ( ) ; },if (aux + pos == (int)s.size()) return pos;,5,fail,Annotation semantically wrong
+else if str at j >= 'a' bit and str[j] <= 'z' bit and num > 1,48303041-1051A-43,} else if ( str [ j ] >= 'a' && str [ j ] <= 'z' && num > 1 ) {,} else if (str[j] >= '0' & str[j] <= '9' & num > 1) {,43,fail,Annotation semantically wrong
+"if s equals ""ULDR"": increment x and y, else if s equals ""UR"" or s equals ""DL"" increment x, else increment y",16515224-183A-25,"s == ""ULDR"" ? s == ""ULDR"" : s == ""UR"" || s == ""DL"" ? x ++ : y ++ ;","        s == ""ULDR"" ? x++, y++ : ((s == ""UR"" || s == ""DL"") ? x++ : y++);",6,fail,Generation wrong
+if 111 * low * low * low = target and a modulo low = 0 and b modulo low = 0,48669279-833A-36,if ( 111 * low * low * low == target && a % low == 0 && b % low == 0 ) {,if (1ll * low * low * low == target and (a % low == 0) and (b % low == 0)),24,fail,Annotation semantically wrong
+position i of cumm is equal to the sum of position i-1 of cumm and the decimal number of the char in s[i-1] - 48,48718316-364A-21,cumm += ( cumm [ i ] + cumm [ i - 1 ] ) + ( s [ i - 1 ] ) ;,cumm[i] = cumm[i - 1] + (s[i - 1] - '0');,12,fail,Generation wrong
+loop k from to n exclusive,39769252-802A-54,for ( int k = n ; k < n ; k ++ ) {,for (k = i + 1; k < n; k++) {,26,fail,Annotation semantically wrong
+"for j = 1 to temp[4][i], print row, i",48711522-815A-56,"for ( j = 1 ; j <= temp [ 4 ] [ i ] ; j ++ ) cout << row << "" "" << i << endl ;","                for (int j = 1; j <= temp[4][i]; j++) cout << ""row "" << i << endl;",68,fail,"Reasonable,  but needs type disambiguation"
+a0 equals temp,27048123-207A1-2,a0 = temp ;,a0 = tmp;,11,fail,"Reasonable, var name typo in annotation"
+else if reference to a in ch2 and reference to b in ( reference to a in ch2 + la ),36790095-8A-1,"} else if ( strcmp ( ch2 , a ) && strcmp ( a , a + la ) )","} else if (strstr(ch2, a) && strstr(strstr(ch2, a) + la, b)) {",15,fail,"Reasonable,  but needs type disambiguation"
+remove first element of t from s,48655296-802A-54,"s . erase ( 0 , 1 ) ;",s.erase(*(t.begin()));,20,fail,Generation wrong
+if (x2-x1) and (y2-y1) are multiple of 4,39752724-362A-31,if ( ( x2 - x1 ) % ( y2 - y1 ) == 4 ) {,if ((x2 - x1) % 4 == 0 && (y2 - y1) % 4 == 0),20,fail,Generation wrong
+"create boolean backwards with backwards = function with arguments address of colors_rev, address of round1, address of round2",47319655-8A-1,bool backwards = & colors_rev ;,"bool backwards = [&colors_rev, &round1, &round2]() {",11,fail,Generation wrong
+"print min r1, r2 - max of l1, l2 + 1",46255022-714A-10,"cout << min ( min ( l1 , l2 ) - max ( l1 , l2 + 1 ) ) << endl ;","cout << min(r1, r2) - max(l1, l2) + 1 << endl;",9,fail,Generation wrong
+else if s is t,42284554-1023A-10,} else if ( s == t ) {,"} else if (strcmp(s, t) == 0) {",45,fail,"Reasonable,  but needs type disambiguation"
+int a = r % 2,41004946-40A-54,int a = r % 2 ;,int a = ((int)r) % 2;,20,fail,Annotation semantically wrong
+"if f is equal to 1, push back element 1 in second",48593296-976A-2,if ( f == 1 ) second . push_back ( 1 ) ;,if (f == 1) second.push_back('1');,10,fail,"Reasonable,  but needs type disambiguation"
+create integers dig_n=0 and dig_m=0,47683529-685A-37,"int dig_n = 0 , dig_m = 0 ;","long long a = n - 1, b = m - 1;",16,fail,Annotation semantically wrong
+pos_2 = index of c in a starting from pos_1 + length of b,32975516-8A-54,int pos_2 = a + b . length ( ) + b ;,"pos_2 = a.find(c, pos_1 + b.length());",13,fail,Generation wrong
+let a0 be an integer with a0 = the character a - 1,46814226-464A-42,int a0 = a - 1 ;,int a0 = 'a' - 1;,2,fail,"Reasonable,  but needs type disambiguation"
+"let sum1, sumr = integer with values = 0",48922949-900A-39,"int sum1 = 0 , sumr = 0 ;","int suml = 0, sumr = 0;",4,fail,"Reasonable, var name typo in annotation"
+else if s[i] = '(',49047936-494A-54,else if ( s [ i ] == '(' ),} else if (s[i] == '(') {,24,fail,"Reasonable,  but needs syntax disambiguation"
+print 2 * a + 1,47830733-950A-36,cout << 2 * a + 1 << endl ;,cout << 2 * (a + l) << endl;,9,fail,Generation wrong
+incrementa,47970050-816A-39,incrementa :,a++;,19,fail,"Reasonable, var name typo in annotation"
+change aa to n/ nn * k,38319909-89A-54,aa = n / nn * k ;,aa = (long long int)m / nn * k;,22,fail,Annotation semantically wrong
+else if m is x and m is not ?,47275937-957A-18,} else if ( m == x && m != ? ) {,} else if (m == x && m != '?') {,10,fail,"Reasonable,  but needs type disambiguation"
+declare integer u = (first element between a and a + n comparing greater than a[i]+d) - a,48690243-251A-1,"int u = upper_bound ( a , a + n , greater < a [ i ] + d ) - a ;","int u = upper_bound(a, a + n, a[i] + d) - a;",8,fail,Generation wrong
+for i = 0 to count inclusive,19190578-663A-3,for ( int i = 0 ; i <= count ; i ++ ) {,for (int i = 0; i <= cnt; i++) {,49,fail,"Reasonable, var name typo in annotation"
+set mp[A] = 14,48490470-106A-39,mp [ A ] = 14 ;,mp['A'] = 14;,10,fail,"Reasonable,  but needs type disambiguation"
+for i = 0 to str length exclusive,48933090-58A-25,for ( int i = 0 ; i < str . length ( ) ; i ++ ) {,for (int i = index; i < str.length(); i++) {,22,fail,Annotation semantically wrong
+set add1 = 1,45442542-950A-39,add1 = 1 ;,addl = 1;,8,fail,"Reasonable, var name typo in annotation"
+increment value at c,47843353-394A-57,++ c ;,(*c)++;,9,fail,Generation wrong
