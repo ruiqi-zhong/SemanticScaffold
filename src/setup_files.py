@@ -53,10 +53,6 @@ if __name__ == '__main__':
     print('preparing judge folder')
     prepare_judge_folder()
     os.mkdir(data_dir)
-    os.mkdir('../spoc/search_results/')
-    os.mkdir('../spoc/eval_memo/')
-    os.mkdir('../spoc/onmt/')
-    os.mkdir('../spoc/pre_trans/')
 
     for name in ['indent', 'programs', 'comments_revealed', 'comments']:
         os.mkdir(os.path.join(data_dir, name))

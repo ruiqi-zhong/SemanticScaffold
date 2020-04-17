@@ -4,7 +4,8 @@ from utils.spoc_utils import freeze_config, unfreeze_config, normalize_scores
 from search_util.tables import increment_check
 import numpy as np
 from search_util.beam import Beam
-from utils.spoc_utils import annotate_type
+from typing import List, Union
+
 
 debug = False
 
@@ -13,23 +14,7 @@ line_types = {'dowhile', 'if', 'else', 'else if', 'while', 'for', 'close_curly_o
 scope_keys = ['line_type', 'line_complete', 'start_w_close_curly', 'end_w_open_curly']
 
 
-def generate_typed_new_groups(candidates, candidate_table_histories, all_translations, comments):
-    groups = []
-    for (configs, candidate_score), tables in zip(candidates, candidate_table_histories):
-        sents_l, scores_l = [], []
-        for config, comment, table in zip(configs, comments, tables):
-            annotated_comment = annotate_type(comment, table)
-            sents, scores = all_translations[annotated_comment]
-            filtered_sents, filtered_scores = rej_by_table_config(sents, scores, config, typed=True)
-
-            filtered_scores = normalize_scores(filtered_scores)
-            sents_l.append(filtered_sents)
-            scores_l.append(filtered_scores)
-        groups.append((sents_l, scores_l, candidate_score))
-
-    return groups
-
-def str2scope_config(s):
+def str2syntax_config(s):
     if len(s.split(' ')) != 4:
         return None
     toks = s.split(' ')
@@ -47,7 +32,8 @@ def marginalize_config(sents_config, probs):
     config_logprobs = [(key, np.log(config_probs[key])) for key in config_probs]
     return config_logprobs
 
-def rej_by_scope_config(sents, scores, config):
+
+def rej_by_syntax_config(sents, scores, config):
     result_sents, result_scores = [], []
     info_dict = unfreeze_config(config)
     info_dict['indent'] = None
@@ -60,6 +46,7 @@ def rej_by_scope_config(sents, scores, config):
         except:
             continue
     return result_sents, result_scores
+
 
 def rej_by_table_config(sents, scores, config, typed):
     result_sents, result_scores = [], []
@@ -77,7 +64,8 @@ def rej_by_table_config(sents, scores, config, typed):
             continue
     return result_sents, result_scores
 
-def validate_scope_config(config):
+
+def validate_syntax_config(config):
     info_dict = unfreeze_config(config)
     line_type = info_dict['line_type']
     if line_type not in line_types:
@@ -90,15 +78,16 @@ def validate_scope_config(config):
         return False
     return True
 
+
 def filter_scopes(sent_scopes_l, scores_l):
     new_sent_scopes_l, new_scores_l  = [], []
     for sent_scopes, scores in zip(sent_scopes_l, scores_l):
         new_sent_scopes, new_scores = [], []
         for sent_scope, score in zip(sent_scopes, scores):
-            config = str2scope_config(sent_scope)
+            config = str2syntax_config(sent_scope)
             if config is None:
                 continue
-            if validate_scope_config(config):
+            if validate_syntax_config(config):
                 new_sent_scopes.append(config)
                 new_scores.append(score)
         new_sent_scopes_l.append(new_sent_scopes)
@@ -173,6 +162,7 @@ class ScopeInfo:
 
 class SearchError(Exception):
     pass
+
 
 class StructureCandidate:
 
@@ -410,12 +400,25 @@ class StructureCandidate:
         self.table_history.append(var_table_this_line)
 
 
-def search_structured_groups(sents_l, scores_l, search_option, indent=None,
-                             config_logprobs_l=None, top_k=20, beam_size=50,
-                             use_code=False, structure_only=False):
+def search_structured_groups(sents_l: List[List[str]],  # L x C list of list
+                             scores_l: List[List[float]],  # L x C list of list
+                             search_option: str,  # base/syntax/semantics
+                             indent: Union[None, List[str]] = None,
+                             #  if not None it is a length L list of indentation level for each line
+                             config_logprobs_l=None,
+                             top_k=20,
+                             beam_size=50,
+                             use_code=False,
+                             structure_only=False
+                             ):
     if not structure_only:
         program_length = len(sents_l)
+        # directly reject the fragments we cannot parse
+        # as mentioned in section 5. in our paper
         sents_l, scores_l, rejected_mass = rej_by_type_line(sents_l, scores_l)
+
+        # if the base case, no constraint is active and hence no search is needed
+        # directly return the function input
         if search_option == 'base':
             return {
                 'groups': [(sents_l, scores_l, 0)],
@@ -423,6 +426,9 @@ def search_structured_groups(sents_l, scores_l, search_option, indent=None,
             }
 
     candidate_init, sent_configs_l = None, []
+
+    # extract_syntax_config and extract_semantics_config
+    # extract the configuration of each code fragment
     if search_option == 'base':
         pass
     if search_option == 'syntax':
@@ -447,20 +453,12 @@ def search_structured_groups(sents_l, scores_l, search_option, indent=None,
                     extra_info = {'indent': int(indent[line_id])}
                 sent_configs_l.append([(extract_semantics_config(sent, extra_info, typed=False)) for sent in sents])
 
-    elif search_option == 'typed':
-        candidate_init = lambda: StructureCandidate(consider_scope=True, consider_table=True,
-                                                    table_typed=True, use_code=use_code)
-        if not structure_only:
-            for line_id, sents in enumerate(sents_l):
-                if structure_only:
-                    break
-                if indent is None:
-                    extra_info = None
-                else:
-                    extra_info = {'indent': int(indent[line_id])}
-                sent_configs_l.append([(extract_semantics_config(sent, extra_info, typed=True)) for sent in sents])
     else:
         raise Exception('Option %s not understood' % search_option)
+    # sent_configs_l is an L x C list of list of configs
+    # candidate_init is a function that returns a new hypothesis class instantiation
+    # this class can check whether a certain extension is possible
+    # e.g. whether the next code piece satisfy the syntax/semantics constraint
 
     if config_logprobs_l is None and not use_code:
         config_logprobs_l = [marginalize_config(sent_configs, np.e ** (-np.array(scores)))
@@ -470,7 +468,11 @@ def search_structured_groups(sents_l, scores_l, search_option, indent=None,
                               for sent, sent_config, score in zip(sents, sent_configs, scores)
                               if sent_config is not None]
                              for sents, sent_configs, scores in zip(sents_l, sent_configs_l, scores_l)]
+    # config_logprobs_l is now a list (length L) of dictionaries mapping
+    # from config score for a line
+    # to the log probability of the config
 
+    # now we beam search over the configuration space
     b = Beam(beam_size, candidate_init, config_logprobs_l)
     if not structure_only:
         extend_amortized = float(b.extend_count) / program_length
@@ -493,8 +495,6 @@ def search_structured_groups(sents_l, scores_l, search_option, indent=None,
 
     candidates = b.fetch_candidates()[:top_k]
     candidate_rank_history, candidate_score_history = b.get_beam_histories()
-    if search_option == 'typed':
-        candidate_table_history = b.get_tables()
 
     if structure_only:
         return {

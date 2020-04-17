@@ -88,7 +88,6 @@ def calculate_result(result_dir, opt):
                np.array([r for r in rank if type(r) != str]))
 
 
-
 if __name__ == '__main__':
     args = get_args()
     calculate_result(args.result_dir, args.opt)
