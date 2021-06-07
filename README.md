@@ -16,7 +16,7 @@ To reproduce the training process, change directory to the  ```src``` folder and
 ```python3 onmt_dir/prepare_for_onmt.py comments```
 
 Then the source/target data file for training a pseudocode2code translation model will appear in ```spoc/onmt/```.
-We used the default hyper-parameters from OpenNMT to train the model, with command line arguments:
+We used [OpenNMT-py v0.9.2](https://github.com/OpenNMT/OpenNMT-py/releases/tag/0.9.2) and its default hyperparameters to train the model, with command line arguments:
 
 ```python3 -u ../opennmt/preprocess.py -train_src programscomments_train.src -train_tgt ../spoc/onmt/programscomments_train.tgt -save_data ../spoc/onmt/data --dynamic_dict```
 
